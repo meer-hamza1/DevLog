@@ -13,11 +13,11 @@ export default async function AdminDashboard() {
   const posts = await db.collection("posts").find({}).toArray()
 
   const serializedPosts = posts.map((post) => ({
-    title: post.title,
-    slug: post.slug,
-    createdAt: post.createdAt,
-    content: post.content,
-  }))
+  title: post.title as string,
+  slug: post.slug as string,
+  createdAt: post.createdAt as string,
+  content: post.content as string,
+}))
 
   return (
     <main className="max-w-3xl mx-auto px-6 py-12">
