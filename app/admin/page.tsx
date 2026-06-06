@@ -16,6 +16,7 @@ export default async function AdminDashboard() {
     title: post.title,
     slug: post.slug,
     createdAt: post.createdAt,
+    content: post.content,
   }))
 
   return (

@@ -7,7 +7,7 @@ export const dynamic = "force-dynamic"
 
 export default async function Home() {
   const session = await getServerSession(authOptions)
-  const res = await fetch("http://localhost:3000/api/posts")
+  const res = await fetch(`${process.env.NEXTAUTH_URL}/api/posts`)
   const data = await res.json()
 
   return (
